@@ -1,13 +1,13 @@
 import streamlit as st
 
-st.title("Open URLs with Buttons")
+st.title("নিচের button গুলো click করে, app গুলো open করা যাবে")
 
 # Define buttons with their URLs
 urls = {
-    "Google": "https://www.google.com",
-    "YouTube": "https://www.youtube.com",
-    "GitHub": "https://www.github.com",
-    "Stack Overflow": "https://stackoverflow.com"
+    "Die Maintenance data submit": "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3",
+    "Priority List Wirecut Work": "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b",
+    "Die Backup Entry": "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87",
+    "Live Die Maintenance Report": "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523"
 }
 
 # Create buttons using st.link_button()
