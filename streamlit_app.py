@@ -11,6 +11,8 @@ urls = {
     "Die Backup Entry": "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87",
     "Die Damage Incident Entry": "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54",
     "Live Die Maintenance Report": "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523",
+    "Hasan Vhai (VMC Entry)": "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2",
+    "Hasan Vhai (VMC Cutter Dashboard)": "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c",
     "Job List Die Modification/Service": "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272"   
 }
 
