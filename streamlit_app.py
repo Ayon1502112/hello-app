@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Set page configuration for a wider layout
-st.set_page_config(layout="wide", page_title="অ্যাপ লক্ষ্য", page_icon=":house_buildings:")
+st.set_page_config(layout="wide", page_title="", page_icon=":house_buildings:")
 
 # Custom CSS for styling
 st.markdown("""
