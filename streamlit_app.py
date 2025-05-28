@@ -53,7 +53,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Subtitle to guide users
-st.markdown("<p>নিচের বোতামগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
+st.markdown("<p>নিচের Button গুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
 
 # Define buttons with their URLs
 urls = {
@@ -76,4 +76,4 @@ for name, url in urls.items():
     st.link_button(name, url)
 
 # Footer text
-st.markdown("<p style='text-align:center; font-size: 0.9em; color: #777; margin-top: 30px;'>একটি সুন্দর অ্যাপ অভিজ্ঞতার জন্য ডিজাইন করা হয়েছে।</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center; font-size: 1.2em; color: #777; margin-top: 30px;'>একটি সুন্দর অ্যাপ অভিজ্ঞতার জন্য ডিজাইন করা হয়েছে।</p>", unsafe_allow_html=True)
