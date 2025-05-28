@@ -74,6 +74,3 @@ urls = {
 # Create buttons
 for name, url in urls.items():
     st.link_button(name, url)
-
-# Footer text
-st.markdown("<p style='text-align:center; font-size: 1.2em; color: #777; margin-top: 30px;'>একটি সুন্দর অ্যাপ অভিজ্ঞতার জন্য ডিজাইন করা হয়েছে।</p>", unsafe_allow_html=True)
