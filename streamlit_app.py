@@ -1,13 +1,13 @@
 import streamlit as st
 
-# Set page configuration for a wider layout
-st.set_page_config(layout="wide", page_title="", page_icon=":house_buildings:")
+# Set page configuration with no title or icon, using a wide layout
+st.set_page_config(page_title="", page_icon=None, layout="wide")
 
 # Custom CSS for styling
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(to bottom right, #8a2be2, #4169e1);
+        background: #ADD8E6;  /* Light blue background */
         color: black;
         font-family: sans-serif;
         padding: 20px;
@@ -20,16 +20,11 @@ st.markdown("""
         max-width: 600px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
-    h1 {
-        text-align: center;
-        color: #4b0082;
-        font-size: 2.5em;
-        margin-bottom: 10px;
-    }
     .stMarkdown p {
         text-align: center;
-        font-size: 1.1em;
-        color: #555;
+        font-size: 1.5em;
+        color: #333;
+        font-weight: bold;
         margin-bottom: 30px;
     }
     .stLinkButton button {
@@ -37,18 +32,18 @@ st.markdown("""
         padding: 15px;
         margin-bottom: 15px;
         border-radius: 5px;
-        border: none;
-        background-color: #f0f0f0;
+        border: 1px solid #ccc;  /* Border for visibility */
+        background-color: white;
         color: #333;
         font-size: 1.2em;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
     .stLinkButton button:hover {
-        background-color: #e0e0e0;
+        background-color: #f0f0f0;
     }
     .stLinkButton:first-of-type button {
-        background-color: #ffebee;
+        background-color: #ffebee;  /* Distinct light red for first button */
         color: #ef5350;
     }
     .stLinkButton:first-of-type button:hover {
@@ -57,30 +52,28 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Header with placeholder logo
-st.markdown('<div style="text-align:center; font-size: 3em; color: #4b0082;">■■<br>■■</div>', unsafe_allow_html=True)
-st.markdown("<h1>অ্যাপ লক্ষ্য</h1>", unsafe_allow_html=True)
-st.markdown("<p>নিচের Button গুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
+# Subtitle to guide users
+st.markdown("<p>নিচের বোতামগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
 
-# Define buttons with URLs and icons
+# Define buttons with their URLs
 urls = {
-    " Die Maintenance data submit": "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3",
-    " Priority List Wirecut Work": "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b",
-    " Wirecut Data Submit": "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c",
-    " Dashboard (Wirecut Monitoring)": "https://lookerstudio.google.com/reporting/7ed9000d-a119-4655-9c6d-d311a1d23a28",
-    " Die Backup Entry": "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87",
-    " Die Damage Incident Entry": "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54",
-    " Live Die Maintenance Report": "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523",
-    " Hasan Bhai (VMC Entry)": "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2",
-    " Hasan Bhai (VMC Cutter Dashboard)": "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c",
-    " Maintenance Monitoring (Entry Form)": "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29",
-    " Job List Die Modification/Service": "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272",
-    " Service": "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"
+    "Die Maintenance data submit": "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3",
+    "Priority List Wirecut Work": "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b",
+    "Wirecut Data Submit": "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c",
+    "Dashboard (Wirecut Monitoring)": "https://lookerstudio.google.com/reporting/7ed9000d-a119-4655-9c6d-d311a1d23a28",
+    "Die Backup Entry": "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87",
+    "Die Damage Incident Entry": "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54",
+    "Live Die Maintenance Report": "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523",
+    "Hasan Bhai (VMC Entry)": "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2",
+    "Hasan Bhai (VMC Cutter Dashboard)": "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c",
+    "Maintenance Monitoring (Entry Form)": "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29",
+    "Job List Die Modification/Service": "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272",
+    "Service": "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"
 }
 
 # Create buttons
 for name, url in urls.items():
     st.link_button(name, url)
 
-# Footer
+# Footer text
 st.markdown("<p style='text-align:center; font-size: 0.9em; color: #777; margin-top: 30px;'>একটি সুন্দর অ্যাপ অভিজ্ঞতার জন্য ডিজাইন করা হয়েছে।</p>", unsafe_allow_html=True)
