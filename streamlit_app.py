@@ -53,7 +53,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Subtitle to guide users
-st.markdown("<p>নিচের Button গুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
+st.markdown("<p>নিচের Button গুলোতে Click করে, অ্যাপগুলো ওপেন করা যাবে</p>", unsafe_allow_html=True)
 
 # Define buttons with their URLs
 urls = {
