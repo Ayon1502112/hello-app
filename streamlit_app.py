@@ -73,6 +73,7 @@ tabs_data = {
         ("Die Damage Incident Entry", "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54"),
         ("Hasan Bhai (VMC Entry)", "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2"),
         ("Maintenance Monitoring (Entry Form)", "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29"),
+        ("Priority List Wirecut Work", "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b"),
         ("Job List Die Modification/Service", "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272"),
     ],
     "Dashboards": [
@@ -83,7 +84,6 @@ tabs_data = {
         ("No. Die Test", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
     ],
     "Alerts": [
-        ("Priority List Wirecut Work", "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b"),
         ("Transport Alert", "https://www.appsheet.com/start/8c342b26-93c9-4180-b4ae-007bc2a72643"),
     ],
 }
