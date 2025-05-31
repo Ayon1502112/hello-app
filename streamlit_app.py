@@ -66,22 +66,22 @@ st.markdown("<p>নিচের ট্যাবগুলোতে ক্লি�
 
 # Define buttons with their URLs, grouped by category
 tabs_data = {
-    "Data Submission": [
-        ("Die Maintenance data submit", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
-        ("Wirecut Data Submit", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
+    "Data Entry": [
+        ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
+        ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
         ("Die Backup Entry", "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87"),
         ("Die Damage Incident Entry", "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54"),
-        ("Hasan Bhai (VMC Entry)", "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2"),
-        ("Maintenance Monitoring (Entry Form)", "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29"),
+        ("Hasan Bhai (VMC Cutter Calculation)", "https://www.appsheet.com/start/8c16d536-adb4-4cdd-a1bb-e4a66e6753b2"),
+        ("Urgent Maintenance (Entry Form)", "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29"),
         ("Priority List Wirecut Work", "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b"),
         ("Job List Die Modification/Service", "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272"),
     ],
     "Dashboards": [
         ("Dashboard (Wirecut Monitoring)", "https://lookerstudio.google.com/reporting/7ed9000d-a119-4655-9c6d-d311a1d23a28"),
-        ("Live Die Maintenance Report", "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523"),
+        ("Total Die Maintenance Report", "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523"),
         ("Hasan Bhai (VMC Cutter Dashboard)", "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c"),
         ("Dashboard for Urgent maintenance", "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"),
-        ("No. Die Test", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
+        ("No. Die Tested", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
     ],
     "Alerts": [
         ("Transport Alert", "https://www.appsheet.com/start/8c342b26-93c9-4180-b4ae-007bc2a72643"),
