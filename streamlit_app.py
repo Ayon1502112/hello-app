@@ -69,7 +69,9 @@ urls = {
     "Maintenance Monitoring (Entry Form)": "https://www.appsheet.com/start/a81e8891-6548-4994-80c5-d7ec4f7d8c29",
     "Job List Die Modification/Service": "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272",
     "Transport Alert": "https://www.appsheet.com/start/8c342b26-93c9-4180-b4ae-007bc2a72643",
-    "Service": "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"
+    "Dashboard for Urgent maintenance": "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec",
+    "Transport Alert": "https://www.appsheet.com/start/8c342b26-93c9-4180-b4ae-007bc2a72643",
+    "No. Die Test": "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"
 }
 
 # Create buttons
