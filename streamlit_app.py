@@ -81,6 +81,7 @@ tabs_data = {
         ("Total Die Maintenance Report", "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523"),
         ("Hasan Bhai (VMC Cutter Dashboard)", "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c"),
         ("Dashboard for Urgent maintenance", "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"),
+        ("Die Backup/Wastage/Accident Report", "https://lookerstudio.google.com/reporting/ef474d7a-626f-43b3-9d20-271603f677ea"),
         ("No. Die Tested", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
     ],
     "Alerts": [
