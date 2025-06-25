@@ -66,7 +66,7 @@ st.markdown("<p>নিচের ট্যাবগুলোতে ক্লি�
 
 # Define buttons with their URLs, grouped by category
 tabs_data = {
-    "Data Entry": [
+    "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
         ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
         ("Die Backup/Wastage Entry", "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87"),
@@ -84,8 +84,9 @@ tabs_data = {
         ("Die Backup/Wastage/Accident Report", "https://lookerstudio.google.com/reporting/ef474d7a-626f-43b3-9d20-271603f677ea"),
         ("No. Die Tested", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
     ],
-    "Die Modificaton": [
+    "Data Entry 02": [
         ("Modification (Entry)", "https://www.appsheet.com/start/7a765b66-b7d3-4e9d-b546-6002c91482d4"),
+        ("Remaining Task (Wirecut/VMC)", "https://www.appsheet.com/start/b7a6c980-9901-4fdd-b968-35aafdd6f689"),
     ],
 }
 
