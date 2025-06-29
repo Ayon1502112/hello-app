@@ -83,7 +83,7 @@ tabs_data = {
         ("Hasan Bhai (VMC Cutter Dashboard)", "https://lookerstudio.google.com/reporting/6556c179-2249-4fcf-9a52-5d8fbff20e3c"),
         ("Dashboard for Urgent maintenance", "https://lookerstudio.google.com/reporting/2b600a29-9938-4810-96db-a60eb99574ec"),
         ("Die Backup/Wastage/Accident Report", "https://lookerstudio.google.com/reporting/ef474d7a-626f-43b3-9d20-271603f677ea"),
-        ("No. Die Tested", "https://lookerstudio.google.com/reporting/602b17d7-4a56-4a4c-8335-6bf523813c5a"),
+        ("Search Die Info", "https://script.google.com/a/~/macros/s/AKfycbyoLxXB_UEUvNzufJZ6vkwc9X6ifK_XErKCHIYfxxF6WS6eCAxPFWfvbQAVwKFVQVqs/exec"),
     ],
     "Data Entry 02": [
         ("Modification (Entry)", "https://www.appsheet.com/start/7a765b66-b7d3-4e9d-b546-6002c91482d4"),
