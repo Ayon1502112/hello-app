@@ -1,23 +1,76 @@
 import streamlit as st
 
-# Minimal page config with only essential parameters
-st.set_page_config(layout="wide")
+# --- Page configuration ---
+st.set_page_config(page_title="", page_icon=None, layout="wide")
 
-# Inline CSS instead of cached function (reduces function call overhead)
-CSS = """
+# --- Custom CSS Styling ---
+st.markdown("""
 <style>
-body { background: #ADD8E6; font-family: sans-serif; }
-.block-container { background: white; border-radius: 10px; padding: 30px; max-width: 800px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
-h2 { text-align: center; font-size: 1.5em; color: #333; margin-bottom: 20px;}
-a.button { display: block; width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; text-align: center; background: white; border: 1px solid #ccc; color: #333; font-size: 1.1em; text-decoration: none; transition: background 0.3s ease;}
-a.button:hover { background: #f0f0f0; }
-a.button.first { background: #ffebee; color: #ef5350; }
-a.button.first:hover { background: #ffcdd2; }
+    /* App background and font */
+    .stApp {
+        background: #ADD8E6;
+        color: black;
+        font-family: sans-serif;
+        padding: 20px;
+    }
+    /* Main container */
+    .main .block-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        margin: auto;
+        max-width: 800px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* Subtitle */
+    .stMarkdown p {
+        text-align: center;
+        font-size: 1.5em;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    /* Buttons */
+    .stLinkButton button {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: white;
+        color: #333;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .stLinkButton button:hover {
+        background-color: #f0f0f0;
+    }
+    .stLinkButton:first-of-type button {
+        background-color: #ffebee;
+        color: #ef5350;
+    }
+    .stLinkButton:first-of-type button:hover {
+        background-color: #ffcdd2;
+    }
+    /* Tabs styling */
+    .stTabs [data-baseweb="tab"] {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        padding: 10px 20px;
+    }
+    .stTabs [data-baseweb="tab"]:hover {
+        background-color: #f0f0f0;
+    }
 </style>
-"""
+""", unsafe_allow_html=True)
 
-# Pre-render all HTML content
-TABS_DATA = {
+# --- Subtitle ---
+st.markdown("<p>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</p>", unsafe_allow_html=True)
+
+# --- Tab data ---
+tabs_data = {
     "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
         ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
@@ -43,24 +96,8 @@ TABS_DATA = {
     ],
 }
 
-# Initialize session state variables
-if 'active_tab' not in st.session_state:
-    st.session_state.active_tab = list(TABS_DATA.keys())[0]
-    st.session_state.links_html = ""
-
-# Single markdown call for all static content
-st.markdown(f"{CSS}<h2>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</h2>", unsafe_allow_html=True)
-
-# Get current tab selection
-active_tab = st.selectbox("Choose category", TABS_DATA.keys(), key='tab_selector')
-
-# Build links HTML when tab changes or on first load
-if st.session_state.active_tab != active_tab or not st.session_state.links_html:
-    st.session_state.active_tab = active_tab
-    st.session_state.links_html = "".join(
-        f'<a href="{url}" target="_blank" class="button{' first' if i==0 else ''}">{name}</a>'
-        for i, (name, url) in enumerate(TABS_DATA[active_tab])
-    )
-
-# Display the links
-st.markdown(st.session_state.links_html, unsafe_allow_html=True)
+# --- Create tabs and buttons ---
+for tab_name, links in tabs_data.items():
+    with st.tabs([tab_name])[0]:
+        for name, url in links:
+            st.link_button(name, url)
