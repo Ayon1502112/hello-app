@@ -1,70 +1,49 @@
 import streamlit as st
 
-# Set page configuration with no title or icon, using a wide layout
 st.set_page_config(page_title="", page_icon=None, layout="wide")
 
-# Custom CSS for styling
+# Minimal CSS – single injection
 st.markdown("""
 <style>
-    .stApp {
-        background: #ADD8E6;  /* Light blue background */
-        color: black;
-        font-family: sans-serif;
-        padding: 20px;
-    }
-    .main .block-container {
-        background-color: white;
-        border-radius: 10px;
-        padding: 30px;
-        margin: auto;
-        max-width: 800px;  /* Increased width for better tab layout */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    }
-    .stMarkdown p {
-        text-align: center;
-        font-size: 1.5em;
-        color: #333;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
-    .stLinkButton button {
-        width: 100%;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: white;
-        color: #333;
-        font-size: 1.2em;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .stLinkButton button:hover {
-        background-color: #f0f0f0;
-    }
-    .stLinkButton:first-of-type button {
-        background-color: #ffebee;  /* Distinct light red for first button */
-        color: #ef5350;
-    }
-    .stLinkButton:first-of-type button:hover {
-        background-color: #ffcdd2;
-    }
-    .stTabs [data-baseweb="tab"] {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #333;
-        padding: 10px 20px;
-    }
-    .stTabs [data-baseweb="tab"]:hover {
-        background-color: #f0f0f0;
-    }
+body {
+    background: #ADD8E6;
+    font-family: sans-serif;
+}
+.block-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+}
+a.button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    text-align: center;
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+a.button:hover { background: #f0f0f0; }
+a.button.first { background: #ffebee; color: #ef5350; }
+a.button.first:hover { background: #ffcdd2; }
 </style>
 """, unsafe_allow_html=True)
 
-# Subtitle to guide users
-st.markdown("<p>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</p>", unsafe_allow_html=True)
+st.markdown("<h2>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</h2>", unsafe_allow_html=True)
 
-# Define buttons with their URLs, grouped by category
 tabs_data = {
     "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
@@ -91,12 +70,10 @@ tabs_data = {
     ],
 }
 
-# Create tabs
 tab_names = list(tabs_data.keys())
-tabs = st.tabs(tab_names)
+active_tab = st.selectbox("Choose category", tab_names)
 
-# Populate each tab with its respective buttons
-for tab, tab_name in zip(tabs, tab_names):
-    with tab:
-        for name, url in tabs_data[tab_name]:
-            st.link_button(name, url)
+# Render only selected tab's links
+for i, (name, url) in enumerate(tabs_data[active_tab]):
+    cls = "button first" if i == 0 else "button"
+    st.markdown(f'<a href="{url}" target="_blank" class="{cls}">{name}</a>', unsafe_allow_html=True)
