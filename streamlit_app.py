@@ -1,50 +1,23 @@
 import streamlit as st
 
-st.set_page_config(page_title="", page_icon=None, layout="wide")
+# Minimal page config with only essential parameters
+st.set_page_config(layout="wide")
 
-# Minimal CSS – single injection
-st.markdown("""
+# Inline CSS instead of cached function (reduces function call overhead)
+CSS = """
 <style>
-body {
-    background: #ADD8E6;
-    font-family: sans-serif;
-}
-.block-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    max-width: 800px;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-h2 {
-    text-align: center;
-    font-size: 1.5em;
-    color: #333;
-}
-a.button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 5px;
-    text-align: center;
-    background: white;
-    border: 1px solid #ccc;
-    color: #333;
-    font-size: 1.1em;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
+body { background: #ADD8E6; font-family: sans-serif; }
+.block-container { background: white; border-radius: 10px; padding: 30px; max-width: 800px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
+h2 { text-align: center; font-size: 1.5em; color: #333; margin-bottom: 20px;}
+a.button { display: block; width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; text-align: center; background: white; border: 1px solid #ccc; color: #333; font-size: 1.1em; text-decoration: none; transition: background 0.3s ease;}
 a.button:hover { background: #f0f0f0; }
 a.button.first { background: #ffebee; color: #ef5350; }
 a.button.first:hover { background: #ffcdd2; }
 </style>
-""", unsafe_allow_html=True)
+"""
 
-st.markdown("<h2>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</h2>", unsafe_allow_html=True)
-
-tabs_data = {
+# Pre-render all HTML content
+TABS_DATA = {
     "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
         ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
@@ -70,10 +43,24 @@ tabs_data = {
     ],
 }
 
-tab_names = list(tabs_data.keys())
-active_tab = st.selectbox("Choose category", tab_names)
+# Initialize session state variables
+if 'active_tab' not in st.session_state:
+    st.session_state.active_tab = list(TABS_DATA.keys())[0]
+    st.session_state.links_html = ""
 
-# Render only selected tab's links
-for i, (name, url) in enumerate(tabs_data[active_tab]):
-    cls = "button first" if i == 0 else "button"
-    st.markdown(f'<a href="{url}" target="_blank" class="{cls}">{name}</a>', unsafe_allow_html=True)
+# Single markdown call for all static content
+st.markdown(f"{CSS}<h2>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</h2>", unsafe_allow_html=True)
+
+# Get current tab selection
+active_tab = st.selectbox("Choose category", TABS_DATA.keys(), key='tab_selector')
+
+# Build links HTML when tab changes or on first load
+if st.session_state.active_tab != active_tab or not st.session_state.links_html:
+    st.session_state.active_tab = active_tab
+    st.session_state.links_html = "".join(
+        f'<a href="{url}" target="_blank" class="button{' first' if i==0 else ''}">{name}</a>'
+        for i, (name, url) in enumerate(TABS_DATA[active_tab])
+    )
+
+# Display the links
+st.markdown(st.session_state.links_html, unsafe_allow_html=True)
