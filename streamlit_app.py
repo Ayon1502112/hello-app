@@ -1,76 +1,81 @@
 import streamlit as st
 
-# --- Page configuration ---
-st.set_page_config(page_title="", page_icon=None, layout="wide")
+# Configure page settings
+st.set_page_config(
+    page_title="",
+    page_icon=None,
+    layout="wide"
+)
 
-# --- Custom CSS Styling ---
-st.markdown("""
-<style>
-    /* App background and font */
-    .stApp {
-        background: #ADD8E6;
-        color: black;
-        font-family: sans-serif;
-        padding: 20px;
-    }
-    /* Main container */
-    .main .block-container {
-        background-color: white;
-        border-radius: 10px;
-        padding: 30px;
-        margin: auto;
-        max-width: 800px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    /* Subtitle */
-    .stMarkdown p {
-        text-align: center;
-        font-size: 1.5em;
-        color: #333;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
-    /* Buttons */
-    .stLinkButton button {
-        width: 100%;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: white;
-        color: #333;
-        font-size: 1.2em;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .stLinkButton button:hover {
-        background-color: #f0f0f0;
-    }
-    .stLinkButton:first-of-type button {
-        background-color: #ffebee;
-        color: #ef5350;
-    }
-    .stLinkButton:first-of-type button:hover {
-        background-color: #ffcdd2;
-    }
-    /* Tabs styling */
-    .stTabs [data-baseweb="tab"] {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #333;
-        padding: 10px 20px;
-    }
-    .stTabs [data-baseweb="tab"]:hover {
-        background-color: #f0f0f0;
-    }
-</style>
-""", unsafe_allow_html=True)
+# Apply custom styling
+st.markdown(
+    """
+    <style>
+        .stApp {
+            background: #ADD8E6;
+            color: black;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        .main .block-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .stMarkdown p {
+            text-align: center;
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .stLinkButton button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: #333;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .stLinkButton button:hover {
+            background-color: #f0f0f0;
+        }
+        .stLinkButton:first-of-type button {
+            background-color: #ffebee;
+            color: #ef5350;
+        }
+        .stLinkButton:first-of-type button:hover {
+            background-color: #ffcdd2;
+        }
+        .stTabs [data-baseweb="tab"] {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 20px;
+        }
+        .stTabs [data-baseweb="tab"]:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-# --- Subtitle ---
-st.markdown("<p>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</p>", unsafe_allow_html=True)
+# Display user guidance
+st.markdown(
+    "<p>নিচের ট্যাবগুলোতে ক্লিক করে, অ্যাপগুলো ওপেন করুন</p>",
+    unsafe_allow_html=True
+)
 
-# --- Tab data ---
-tabs_data = {
+# Application data organized by categories
+APPLICATION_DATA = {
     "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
         ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
@@ -96,8 +101,11 @@ tabs_data = {
     ],
 }
 
-# --- Create tabs and buttons ---
-for tab_name, links in tabs_data.items():
-    with st.tabs([tab_name])[0]:
-        for name, url in links:
-            st.link_button(name, url)
+# Create interface tabs
+category_tabs = st.tabs(list(APPLICATION_DATA.keys()))
+
+# Populate each tab with its applications
+for tab, category in zip(category_tabs, APPLICATION_DATA):
+    with tab:
+        for app_name, app_url in APPLICATION_DATA[category]:
+            st.link_button(app_name, app_url)
