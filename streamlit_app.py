@@ -86,7 +86,7 @@ APPLICATION_DATA = {
         ("Priority List Wirecut Work", "https://www.appsheet.com/start/f6b450ff-9d67-405e-8dd7-fe906b8a9d3b"),
         ("Job List Die Modification/Service", "https://www.appsheet.com/start/55d59741-2ae3-41a7-8d18-cc47a5775272"),
     ],
-    "Dashboards": [
+    "Dashboards 01": [
         ("Dashboard (Wirecut Monitoring)", "https://lookerstudio.google.com/reporting/7ed9000d-a119-4655-9c6d-d311a1d23a28"),
         ("Total Die Maintenance Report", "https://lookerstudio.google.com/reporting/6d689733-0d3c-4667-ac7f-ee96cd4f0523"),
         ("Dashboard (VMC/Wirecut CAM Task Remained)", "https://lookerstudio.google.com/reporting/cc1b4b03-3301-432e-92d5-35cb6bbda73f"),
@@ -98,6 +98,7 @@ APPLICATION_DATA = {
     "Data Entry 02": [
         ("Modification (Entry)", "https://www.appsheet.com/start/7a765b66-b7d3-4e9d-b546-6002c91482d4"),
         ("Milling Machine (Entry)", "https://www.appsheet.com/start/39113ebf-d65e-47e7-a271-5e0ea8bc6e8f"),
+        ("Die Team Leader (Entry)", "https://www.appsheet.com/start/92286a91-59e3-4a60-b9e4-5eec572e999d"),
         ("Remaining Task Wirecut/VMC (Entry)", "https://www.appsheet.com/start/b7a6c980-9901-4fdd-b968-35aafdd6f689"),
     ],
 }
