@@ -101,6 +101,13 @@ APPLICATION_DATA = {
         ("Die Team Leader (Entry)", "https://www.appsheet.com/start/92286a91-59e3-4a60-b9e4-5eec572e999d"),
         ("Remaining Task Wirecut/VMC (Entry)", "https://www.appsheet.com/start/b7a6c980-9901-4fdd-b968-35aafdd6f689"),
     ],
+    "Dashboards 02": [
+        ("Dashboard (Die Each Process Status)", "https://lookerstudio.google.com/reporting/35bb807a-3f7a-42aa-b7f1-11c8feae0738"),
+        ("Machine Process Scheduling", "https://lookerstudio.google.com/reporting/b677de82-5499-4490-8e8b-ce100027b9f3"),
+        ("Dashboard ((Production/Handover In Progress) Die Information)", "https://lookerstudio.google.com/reporting/67109023-9be7-46ef-9ae8-32a630aeb572"),
+        ("Die Designer Report", "https://lookerstudio.google.com/reporting/6b98657b-ae97-4420-8a31-777432d5c77e"),
+        ("Handover Done All Die Information", "https://lookerstudio.google.com/reporting/1ff39054-6503-4d06-9d0d-61e2d5232b59")
+    ],
 }
 
 # Create interface tabs
