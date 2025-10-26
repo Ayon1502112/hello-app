@@ -97,7 +97,7 @@ APPLICATION_DATA = {
     ],
     "Data Entry 02": [
         ("Modification (Entry)", "https://www.appsheet.com/start/7a765b66-b7d3-4e9d-b546-6002c91482d4"),
-        ("Milling Machine (Entry)", "https://www.appsheet.com/start/39113ebf-d65e-47e7-a271-5e0ea8bc6e8f"),
+        ("Project Tracker (Entry)", "https://www.appsheet.com/start/34180f01-c6fd-4a5d-bd6a-cb2721d4f7a0"),
         ("Die Team Leader (Entry)", "https://www.appsheet.com/start/92286a91-59e3-4a60-b9e4-5eec572e999d"),
         ("Remaining Task Wirecut/VMC (Entry)", "https://www.appsheet.com/start/b7a6c980-9901-4fdd-b968-35aafdd6f689"),
     ],
