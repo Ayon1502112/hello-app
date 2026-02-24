@@ -78,6 +78,7 @@ st.markdown(
 APPLICATION_DATA = {
     "Data Entry 01": [
         ("Daily Die Maintenance Entry", "https://www.appsheet.com/start/d08c2dec-9273-48fa-a169-e71ee9e5eec3"),
+        ("Shadewise Production Time", "https://www.appsheet.com/start/dbae45a7-a082-45c5-89a8-8a4d35a792f2"),
         ("Wirecut Data Entry", "https://www.appsheet.com/start/f2025d66-1faa-4eaf-8db1-f2001d08104c"),
         ("Die Backup/Wastage Entry", "https://www.appsheet.com/start/a60117bc-5aaf-4595-aa19-3d7fd1c54e87"),
         ("Die Accident Entry", "https://www.appsheet.com/start/dfd99944-3ba3-4fc6-8509-35a72a681e54"),
